@@ -26,14 +26,13 @@ echo -e "\n# added by veewee/postinstall.sh" >> /etc/ssh/sshd_config
 echo -e "UseDNS no\n" >> /etc/ssh/sshd_config
 
 # install chef
-### TODO
-### echo -e "\ninstall chef ..."
-### gem install chef --no-ri --no-rdoc
+echo -e "\ninstall chef ..."
+gem install chef -v 11.18.12 --no-ri --no-rdoc
 
-# install pupett
-echo -e "\ninstall pupett ..."
-gem install ruby-augeas
-gem install ruby-shadow -v 2.4.1
+# install puppet
+echo -e "\ninstall puppet ..."
+gem install ruby-augeas -v 0.5.0 --no-ri --no-rdoc
+gem install ruby-shadow -v 2.4.1 --no-ri --no-rdoc
 gem install system_timer -v 1.2.4 --no-rdoc --no-ri
 gem install puppet -v 3.8.7 --no-ri --no-rdoc
 
