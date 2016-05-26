@@ -1,13 +1,13 @@
 Veewee::Session.declare({
   :os_type_id  => 'OpenSUSE_64',
-  :cpu_count   => '1',
-  :memory_size => '1024',
+  :cpu_count   => '2',
+  :memory_size => '2048',
   :disk_size   => '20480',
   :disk_format => 'VDI',
   :hostiocache => 'off',
   :iso_file => "SLES-11-SP4-DVD-x86_64-GM-DVD1.iso",
   :iso_src  => "",
-  :iso_md5  => "480b70d50cbb538382dc2b9325221e1b",
+  :iso_md5  => "c5d2148c2b66ac3ca211484cf2167fab",
   :iso_download_timeout => "1000",
   :boot_wait         => "10",
   :boot_cmd_sequence => [

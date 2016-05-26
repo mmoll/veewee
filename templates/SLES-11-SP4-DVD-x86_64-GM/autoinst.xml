@@ -8,46 +8,6 @@
         <product>sle-sdk</product>
         <product_dir>/</product_dir>
       </listentry>
-      <listentry>
-        <media_url><![CDATA[http://download.opensuse.org/repositories/devel:languages:ruby:backports/SLE_11_SP4/]]></media_url>
-        <name>devel_languages_ruby_backports</name>
-        <product>devel_languages_ruby_backports</product>
-        <product_dir>/</product_dir>
-        <signature-handling>
-          <accept_non_trusted_gpg_key>
-            <all config:type="boolean">false</all>
-            <keys config:type="list">
-              <keyid>9AF0C9A20E9AF123</keyid>
-            </keys>
-          </accept_non_trusted_gpg_key>
-          <import_gpg_key>
-            <all config:type="boolean">false</all>
-            <keys config:type="list">
-              <keyid>9AF0C9A20E9AF123</keyid>
-            </keys>
-          </import_gpg_key>
-        </signature-handling>
-        </listentry>
-      <listentry>
-        <media_url><![CDATA[http://download.opensuse.org/repositories/systemsmanagement:/puppet/SLE_11_SP4/]]></media_url>
-        <name>systemsmanagement_puppet</name>
-        <product>systemsmanagement_puppet</product>
-        <product_dir>/</product_dir>
-        <signature-handling>
-          <accept_non_trusted_gpg_key>
-            <all config:type="boolean">false</all>
-            <keys config:type="list">
-              <keyid>2ABFA143A0E46E11</keyid>
-            </keys>
-          </accept_non_trusted_gpg_key>
-          <import_gpg_key>
-            <all config:type="boolean">false</all>
-            <keys config:type="list">
-              <keyid>2ABFA143A0E46E11</keyid>
-            </keys>
-          </import_gpg_key>
-        </signature-handling>
-      </listentry>
     </add_on_products>
   </add-on>
   <bootloader>
@@ -90,9 +50,9 @@
     <sections config:type="list">
       <section>
         <append>resume=/dev/sda1 splash=silent crashkernel=128M-:64M showopts</append>
-        <image>(hd0,1)/boot/vmlinuz-3.0.76-0.11-default</image>
+        <image>(hd0,1)/boot/vmlinuz-3.0.101-63-default</image>
         <initial>1</initial>
-        <initrd>(hd0,1)/boot/initrd-3.0.76-0.11-default</initrd>
+        <initrd>(hd0,1)/boot/initrd-3.0.101-63-default</initrd>
         <lines_cache_id>0</lines_cache_id>
         <name>SUSE Linux Enterprise Server 11 SP4 - 3.0.101-63</name>
         <original_name>linux</original_name>
@@ -102,8 +62,8 @@
       </section>
       <section>
         <append>showopts ide=nodma apm=off noresume edd=off powersaved=off nohz=off highres=off processor.max_cstate=1 nomodeset x11failsafe</append>
-        <image>(hd0,1)/boot/vmlinuz-3.0.76-0.11-default</image>
-        <initrd>(hd0,1)/boot/initrd-3.0.76-0.11-default</initrd>
+        <image>(hd0,1)/boot/vmlinuz-3.0.101-63-default</image>
+        <initrd>(hd0,1)/boot/initrd-3.0.101-63-default</initrd>
         <lines_cache_id>1</lines_cache_id>
         <name>Failsafe -- SUSE Linux Enterprise Server 11 SP4 - 3.0.101-63</name>
         <original_name>failsafe</original_name>
@@ -115,13 +75,13 @@
   </bootloader>
   <ca_mgm>
     <CAName>YaST_Default_CA</CAName>
-    <ca_commonName>YaST Default CA (vagrant-sles-11sp3-x64)</ca_commonName>
+    <ca_commonName>YaST Default CA (vagrant-sles-11sp4-x64)</ca_commonName>
     <country>US</country>
     <locality></locality>
     <organisation></organisation>
     <organisationUnit></organisationUnit>
     <password>ENTER PASSWORD HERE</password>
-    <server_commonName>vagrant-sles-11sp3-x64.vagrantup.com</server_commonName>
+    <server_commonName>vagrant-sles-11sp4-x64.vagrantup.com</server_commonName>
     <server_email>postmaster@vagrantup.com</server_email>
     <state></state>
     <takeLocalServerName config:type="boolean">false</takeLocalServerName>
@@ -541,7 +501,7 @@
     <dns>
       <dhcp_hostname config:type="boolean">false</dhcp_hostname>
       <domain>vagrantup.com</domain>
-      <hostname>vagrant-sles-11sp3-x64</hostname>
+      <hostname>vagrant-sles-11sp4-x64</hostname>
       <resolv_conf_policy>auto</resolv_conf_policy>
       <searchlist config:type="list">
         <search>vagrantup.com</search>
@@ -644,12 +604,11 @@
       <package>yast2-trans-en_US</package>
       <package>augeas</package>
       <package>augeas-devel</package>
-    </packages>
-    <post-packages config:type="list">
       <package>readline-devel</package>
-      <package>zlib-devel</package> 
+      <package>zlib-devel</package>
       <package>libxml2-devel</package>
-    </post-packages>
+      <package>rubygems</package>
+    </packages>
     <patterns config:type="list">
       <pattern>Basis-Devel</pattern>
       <pattern>Minimal</pattern>
@@ -657,9 +616,7 @@
       <pattern>base</pattern>
       <pattern>sdk_kernel</pattern>
       <pattern>sdk_libs</pattern>
-      <!--
-      <pattern>sdk_ruby</pattern>
-      --> </patterns>
+    </patterns>
     <remove-packages config:type="list">
       <package>3ddiag</package>
       <package>CASA</package>
