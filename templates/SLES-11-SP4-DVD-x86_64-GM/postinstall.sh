@@ -27,6 +27,8 @@ echo -e "UseDNS no\n" >> /etc/ssh/sshd_config
 
 # install chef
 echo -e "\ninstall chef ..."
+gem install mixlib-shellout -v 1.4.0 --no-ri --no-rdoc
+gem install highline -v 1.6.21 --no-ri --no-rdoc
 gem install chef -v 11.18.12 --no-ri --no-rdoc
 
 # install puppet
